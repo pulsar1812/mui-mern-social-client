@@ -12,37 +12,35 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import {
-  Close,
-  DarkMode,
-  Help,
-  LightMode,
-  Menu,
-  Message,
-  Notifications,
-  Search,
-} from '@mui/icons-material'
+import CloseIcon from '@mui/icons-material/Close'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import HelpIcon from '@mui/icons-material/Help'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import MenuIcon from '@mui/icons-material/Menu'
+import MessageIcon from '@mui/icons-material/Message'
+import NotificationsIcon from '@mui/icons-material/Notifications'
+import SearchIcon from '@mui/icons-material/Search'
 
 import { setMode, logout } from '../../state'
 import FlexBetween from '../../components/FlexBetween'
 
 export default function Navbar() {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false)
-  const theme = useTheme()
-  const isNonMobile = useMediaQuery('(min-width: 1000px)')
 
   const navigate = useNavigate()
+
   const dispatch = useDispatch()
   const user = useSelector((state) => state.user)
 
+  const isNonMobile = useMediaQuery('(min-width: 1000px)')
+  const theme = useTheme()
   const neutralLight = theme.palette.neutral.light
   const dark = theme.palette.neutral.dark
   const primaryLight = theme.palette.primary.light
   const background = theme.palette.background.default
   const alt = theme.palette.background.alt
 
-  // const fullName = `${user.firstName} ${user.lastName}`
-  const fullName = 'P Lee'
+  const fullName = `${user.firstName} ${user.lastName}`
 
   return (
     <FlexBetween p='1rem 6%' backgroundColor={alt}>
@@ -70,7 +68,7 @@ export default function Navbar() {
           >
             <InputBase placeholder='Search...' />
             <IconButton>
-              <Search />
+              <SearchIcon />
             </IconButton>
           </FlexBetween>
         )}
@@ -81,14 +79,14 @@ export default function Navbar() {
         <FlexBetween gap='2rem'>
           <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === 'dark' ? (
-              <DarkMode sx={{ fontSize: '25px' }} />
+              <DarkModeIcon sx={{ fontSize: '25px' }} />
             ) : (
-              <LightMode sx={{ color: dark, fontSize: '25px' }} />
+              <LightModeIcon sx={{ color: dark, fontSize: '25px' }} />
             )}
           </IconButton>
-          <Message sx={{ fontSize: '25px' }} />
-          <Notifications sx={{ fontSize: '25px' }} />
-          <Help sx={{ fontSize: '25px' }} />
+          <MessageIcon sx={{ fontSize: '25px' }} />
+          <NotificationsIcon sx={{ fontSize: '25px' }} />
+          <HelpIcon sx={{ fontSize: '25px' }} />
           <FormControl variant='standard' value={fullName}>
             <Select
               value={fullName}
@@ -118,7 +116,7 @@ export default function Navbar() {
         <IconButton
           onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
         >
-          <Menu />
+          <MenuIcon />
         </IconButton>
       )}
 
@@ -138,7 +136,7 @@ export default function Navbar() {
             <IconButton
               onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
             >
-              <Close />
+              <CloseIcon />
             </IconButton>
           </Box>
 
@@ -151,14 +149,14 @@ export default function Navbar() {
           >
             <IconButton onClick={() => dispatch(setMode())}>
               {theme.palette.mode === 'dark' ? (
-                <DarkMode sx={{ fontSize: '25px' }} />
+                <DarkModeIcon sx={{ fontSize: '25px' }} />
               ) : (
-                <LightMode sx={{ color: dark, fontSize: '25px' }} />
+                <LightModeIcon sx={{ color: dark, fontSize: '25px' }} />
               )}
             </IconButton>
-            <Message sx={{ fontSize: '25px' }} />
-            <Notifications sx={{ fontSize: '25px' }} />
-            <Help sx={{ fontSize: '25px' }} />
+            <MessageIcon sx={{ fontSize: '25px' }} />
+            <NotificationsIcon sx={{ fontSize: '25px' }} />
+            <HelpIcon sx={{ fontSize: '25px' }} />
             <FormControl variant='standard' value={fullName}>
               <Select
                 value={fullName}

@@ -3,9 +3,8 @@ import { Box, Typography, useMediaQuery, useTheme } from '@mui/material'
 import Form from './Form'
 
 export default function Login() {
-  const theme = useTheme()
   const isNonMobile = useMediaQuery('(min-width: 1000px)')
-
+  const theme = useTheme()
   const alt = theme.palette.background.alt
 
   return (

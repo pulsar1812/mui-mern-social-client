@@ -9,7 +9,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { EditOutlined } from '@mui/icons-material'
+import EditOutlinedIcon from '@mui/icons-material/EditOutlined'
 import { Formik } from 'formik'
 import * as yup from 'yup'
 import Dropzone from 'react-dropzone'
@@ -59,9 +59,8 @@ export default function Form() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const theme = useTheme()
   const isNonMobile = useMediaQuery('(min-width: 600px)')
-
+  const theme = useTheme()
   const primary = theme.palette.primary.main
   const primaryLight = theme.palette.primary.light
   const medium = theme.palette.neutral.medium
@@ -218,7 +217,7 @@ export default function Form() {
                         ) : (
                           <FlexBetween>
                             <Typography>{values.picture.name}</Typography>
-                            <EditOutlined />
+                            <EditOutlinedIcon />
                           </FlexBetween>
                         )}
                       </Box>

@@ -12,6 +12,7 @@ import { getDesignTokens } from './theme'
 export default function App() {
   const mode = useSelector((state) => state.mode)
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode])
+  const isAuth = Boolean(useSelector((state) => state.token))
 
   return (
     <div className='app'>
@@ -20,8 +21,14 @@ export default function App() {
           <CssBaseline />
           <Routes>
             <Route path='/' element={<Login />} />
-            <Route path='/home' element={<Home />} />
-            <Route path='/profile/:userId' element={<Profile />} />
+            <Route
+              path='/home'
+              element={isAuth ? <Home /> : <Navigate to='/' />}
+            />
+            <Route
+              path='/profile/:userId'
+              element={isAuth ? <Profile /> : <Navigate to='/' />}
+            />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
