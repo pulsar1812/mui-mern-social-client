@@ -3,6 +3,7 @@ import { Box, useMediaQuery } from '@mui/material'
 
 import Navbar from '../navbar'
 import UserWidget from '../widgets/UserWidget'
+import MyPostWidget from '../../components/MyPostWidget'
 
 export default function Home() {
   const { _id, picturePath } = useSelector((state) => state.user)
@@ -22,6 +23,13 @@ export default function Home() {
         <Box flexBasis={isNonMobile ? '26%' : undefined}>
           <UserWidget userId={_id} picturePath={picturePath} />
         </Box>
+        <Box
+          flexBasis={isNonMobile ? '42%' : undefined}
+          mt={isNonMobile ? undefined : '2rem'}
+        >
+          <MyPostWidget picturePath={picturePath} />
+        </Box>
+        {isNonMobile && <Box flexBasis='26%'></Box>}
       </Box>
     </div>
   )
