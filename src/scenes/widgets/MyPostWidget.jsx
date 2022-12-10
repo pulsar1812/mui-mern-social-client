@@ -19,10 +19,10 @@ import MicOutlinedIcon from '@mui/icons-material/MicOutlined'
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined'
 import Dropzone from 'react-dropzone'
 
-import FlexBetween from './FlexBetween'
-import UserImage from './UserImage'
-import WidgetWrapper from './WidgetWrapper'
-import { setPosts } from '../state'
+import FlexBetween from '../../components/FlexBetween'
+import UserImage from '../../components/UserImage'
+import WidgetWrapper from '../../components/WidgetWrapper'
+import { setPosts } from '../../state'
 
 export default function MyPostWidget({ picturePath }) {
   const [image, setImage] = useState(null)

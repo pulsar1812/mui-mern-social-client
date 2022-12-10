@@ -3,7 +3,7 @@ import { Box, useMediaQuery } from '@mui/material'
 
 import Navbar from '../navbar'
 import UserWidget from '../widgets/UserWidget'
-import MyPostWidget from '../../components/MyPostWidget'
+import MyPostWidget from '../widgets/MyPostWidget'
 
 export default function Home() {
   const { _id, picturePath } = useSelector((state) => state.user)
