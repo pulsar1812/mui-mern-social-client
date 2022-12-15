@@ -5,6 +5,7 @@ import Navbar from '../navbar'
 import UserWidget from '../widgets/UserWidget'
 import MyPostWidget from '../widgets/MyPostWidget'
 import AdvertWidget from '../widgets/AdvertWidget'
+import FriendListWidget from '../widgets/FriendListWidget'
 
 export default function Home() {
   const { _id, picturePath } = useSelector((state) => state.user)
@@ -34,6 +35,7 @@ export default function Home() {
           <Box flexBasis='26%'>
             <AdvertWidget />
             <Box m='2rem 0' />
+            <FriendListWidget userId={_id} />
           </Box>
         )}
       </Box>

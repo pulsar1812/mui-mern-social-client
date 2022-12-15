@@ -4,8 +4,8 @@ import { Box, IconButton, Typography, useTheme } from '@mui/material'
 import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined'
 import PersonRemoveOutlinedIcon from '@mui/icons-material/PersonRemoveOutlined'
 
-import FlexBetween from '../../components/FlexBetween'
-import UserImage from '../../components/UserImage'
+import FlexBetween from './FlexBetween'
+import UserImage from './UserImage'
 import { setFriends } from '../state'
 
 export default function Friend({ friendId, name, subtitle, userPicturePath }) {
